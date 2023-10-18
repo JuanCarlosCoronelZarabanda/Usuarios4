@@ -70,7 +70,14 @@ function App() {
   console.log(users)
 
 
-  // Eliminar el usuario
+
+  const handleEditUsers = (user) => {
+    hanldeOpenModal()
+    reset(user)
+    setIdCardToEdit(user.id)
+  }
+
+  
   const handleDeleteUser = (id) => {
     axios.delete(URL_BASE + `/users/${id}/`)
       .then(() => createAllUsers())
@@ -78,12 +85,7 @@ function App() {
   }
 
 
-  //Para que abra el modal y editar los datos del usuario seleccionado
-  const handleEditUsers = (user) => {
-    hanldeOpenModal()
-    reset(user)
-    setIdCardToEdit(user.id)
-  }
+
 
 
   useEffect(() => {
@@ -100,16 +102,16 @@ function App() {
         </div>
 
         <div className='mt-8 sm:mt-0 '>
-          
+
           <button className='bg-[#555A88] px-2 py-2 text-[#302F2F] top-56 w-[200px] sm:w-[200px] h-[42px] flex flex-col-span-2' onClick={hanldeOpenModal}><IconPlus />Crear Nuevo Usuario</button>
         </div>
-        
+
 
       </header>
       <div className='grid justify-center px-5 py-5'>
-      <Modal isShowModal={isShowModal} handleCloseModal={handleCloseModal} handleSubmit={handleSubmit} register={register} submit={submit} idCardToEdit={idCardToEdit} errors={errors} />
-      <UsersList users={users} handleEditUsers={handleEditUsers} handleDeleteUser={handleDeleteUser} />
-      <hr className="border-0.5 border-[#E5E5E5] border-solid py-10" />
+        <Modal isShowModal={isShowModal} handleCloseModal={handleCloseModal} handleSubmit={handleSubmit} register={register} submit={submit} idCardToEdit={idCardToEdit} errors={errors} />
+        <UsersList users={users} handleEditUsers={handleEditUsers} handleDeleteUser={handleDeleteUser} />
+        <hr className="border-0.5 border-[#E5E5E5] border-solid py-10" />
       </div>
     </main>
   )
