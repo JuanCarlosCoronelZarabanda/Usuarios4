@@ -109,6 +109,7 @@ function App() {
       <div className='grid justify-center px-5 py-5'>
       <Modal isShowModal={isShowModal} handleCloseModal={handleCloseModal} handleSubmit={handleSubmit} register={register} submit={submit} idCardToEdit={idCardToEdit} errors={errors} />
       <UsersList users={users} handleEditUsers={handleEditUsers} handleDeleteUser={handleDeleteUser} />
+      <hr className="border-0.5 border-[#E5E5E5] border-solid py-10" />
       </div>
     </main>
   )

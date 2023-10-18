@@ -2,7 +2,7 @@ import User from "./UserCard"
 
 const UsersList = ({users, handleEditUsers, handleDeleteUser}) => {
   return (
-    <section className="grid grid-cols-[repeat(auto-fit,_280px)] justify-center max-w-[1000px] mx-auto gap-5 py-10 px-5">
+    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 max-w-screen-xl mx-auto py-10 px-5">
 
     {
         users.map((user) => ( 
